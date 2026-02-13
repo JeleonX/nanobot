@@ -75,8 +75,17 @@
 **Install from source** (latest features, recommended for development)
 
 ```bash
+sudo apt update
+sudo apt install python3-full python3-pip pipx
 git clone https://github.com/HKUDS/nanobot.git
 cd nanobot
+# 1.‌ 创建虚拟环境
+python3 -m venv .venv
+# 2.‌ 激活虚拟环境
+# Linux/macOS:
+source .venv/bin/activate
+# Windows:
+# .venv\Scripts\activate
 pip install -e .
 ```
 
