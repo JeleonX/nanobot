@@ -137,6 +137,34 @@ For OpenRouter - recommended for global users:
 nanobot agent -m "What is 2+2?"
 ```
 
+**3. Set Systemd**
+
+```bash
+nano /etc/systemd/system/nanobot.service
+----------------------------
+[Unit]
+Description=Nanobot AI Service
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/root/nanobot
+ExecStart=/root/nanobot/.venv/bin/nanobot gateway
+
+Restart=always
+RestartSec=5
+
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
+----------------------------
+systemctl daemon-reload
+systemctl enable nanobot
+systemctl start nanobot
+```
+
 That's it! You have a working AI assistant in 2 minutes.
 
 ## 🖥️ Local Models (vLLM)
