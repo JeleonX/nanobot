@@ -123,6 +123,24 @@ PROVIDERS: tuple[ProviderSpec, ...] = (
         model_overrides=(),
     ),
 
+    # Nvidia.
+    ProviderSpec(
+        name="nvidia",
+        keywords=("nvidia"),
+        env_key="NVIDIA_API_KEY",
+        display_name="Nvidia",
+        litellm_prefix="",
+        skip_prefixes=(),
+        env_extras=(),
+        is_gateway=False,
+        is_local=False,
+        detect_by_key_prefix="",
+        detect_by_base_keyword="",
+        default_api_base="",
+        strip_model_prefix=False,
+        model_overrides=(),
+    ),
+
     # Cerebras.
     ProviderSpec(
         name="cerebras",
